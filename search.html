@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <title>Who's live?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src = "whoslive.js"></script>
+  </head>
+    <header>
+      <nav class="topnav" id="myTopNav">
+        <h2>Who's live?</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="following.html">Following</a></li>
+          <li><a id="thirdA" href="search.html">Search</a></li>
+        </ul>
+      </nav>
+    </header>
+  <main>
+    <div class = "content">
+    <div ng-controller="MainController">
+    <input type="text" ng-model="searchUser" placeholder="Search for users" ng-change = "searchUsers()">
+    <ul>
+        <li ng-repeat = "user in users">
+            <img ng-src="{{user.logo}}" />
+            <h3>{{user.username}}</h3>
+            <div id = "bio">
+              <p>{{user.bio}}</p>
+              <button>Follow</button>
+            </div>
+
+        </li>
+    </ul>
+    
+    
+    </div>
+  </main>
+  <footer>
+    
+
+
+  </footer>
+</html>
